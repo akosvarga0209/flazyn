@@ -1,0 +1,34 @@
+<div class="main-search-container" data-background-image="assets/images/main-search-background-01.jpg">
+  <div class="main-search-inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 translate="searchbar.title"></h2>
+          <h4 translate="searchbar.subtitle"></h4>
+
+          <div class="main-search-input">
+            <div class="main-search-input-item location">
+              <div id="autocomplete-container">
+                <input #autocomplete type="text" [placeholder]="'location' | translate">
+              </div>
+              <a><i class="fa fa-map-marker"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 25%">
+
+        <app-image-button [imageSrc]="'./assets/images/community_icon.png'"
+                          [title]="'searchbar.community'"></app-image-button>
+
+        <app-image-button [imageSrc]="'./assets/images/roommate_icon.png'"
+                          [title]="'searchbar.roommate'"></app-image-button>
+
+        <app-image-button [imageSrc]="'./assets/images/flat_icon.png'"
+                          [title]="'searchbar.flat'"></app-image-button>
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login">
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.email.errors && f.email.touched}">
+    <label for="email" [translate]="'auth.registration_form.email_address_title'">Email Address
+      <i class="im im-icon-Male"></i>
+      <input type="text" formControlName="email" class="input-text" name="email" id="email" value="" />
+    </label>
+    <small *ngIf="f.email.errors && f.email.touched" id="emailFeedback" class="form-text text-muted" [translate]="'auth.registration_form.email_address_feedback'">
+      Please enter your valid email address.
+    </small>
+  </p>
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.password.errors && f.password.touched}">
+    <label for="password" [translate]="'auth.registration_form.password_title'">Password
+      <i class="im im-icon-Lock-2"></i>
+      <input formControlName="password" class="input-text" type="password" name="password" id="password" />
+    </label>
+    <small *ngIf="f.password.errors && f.password.touched" id="passwordFeedback" class="form-text text-muted" [translate]="'auth.sign_in_form.password_feedback'">
+      Please enter your password.
+    </small>
+    <span class="lost_password" [translate]="'auth.sign_in_form.forgot_password'">
+      <a href="#">Forgot Your Password?</a>
+    </span>
+  </p>
+
+  <!-- <div class="form-row" *ngIf="badCreditentialsAppeared">
+    <div class="g-recaptcha" data-sitekey="6LfryXIUAAAAAFL2tkrap63_zgp7zlLYm7y8tzAt"></div>
+    <div *ngIf="captchaError" class="error">Recaptcha not verified.</div>
+  </div> -->
+
+  <button (click)="kek()">keklel</button>
+
+  <div class="form-row">
+    <input type="submit" class="button border margin-top-5" name="login" [value]="loginButton" [disabled]="loading" />
+    <button class="button border margin-top-5" (click)="signInWithFB()">Facebook Login</button>
+    <div class="alert alert-warning" role="alert" *ngIf="alertObject.open">
+      {{alertObject.message}}
+      <a *ngIf="alertObject.link" class="alert-link" (click)="resendActivationEmail()" [translate]="'auth.click_here'">here</a>
+    </div>
+    <div class="checkboxes margin-top-10">
+      <input name="rememberMe" formControlName="rememberMe" id="rememberMe" type="checkbox" name="check">
+      <label for="rememberMe" [translate]="'auth.sign_in_form.remember_me'">Remember Me</label>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,45 @@
+<div class="add-listing-section margin-top-45">
+  <div class="add-listing-headline">
+
+    <h3>
+      <i class="im im-icon-User"></i>
+      {{'community.form.title' | translate}}
+    </h3>
+  </div>
+  <form method="post" [formGroup]="form">
+   <p class="form">
+     <label>{{'community.form.nature' | translate}}</label>
+     <mat-chip-list (selectionChange)="getSelectedNature($event)"  >
+       <mat-chip *ngFor="let nature of natures" [selectable]="true"
+                 [removable]="true" (removed)="getSelectedNature(nature)">
+         {{nature.description}}
+         <i matChipRemove class="im im-icon-Squirrel"></i>
+       </mat-chip>
+     </mat-chip-list>
+
+   </p>
+
+    <p class="form">
+      <mat-chip-list [multiple]="true" [selectable]="true" formControlName="personality">
+        <mat-chip  color="primary" *ngFor="let nature of selectedNatures" [selectable]="true"
+                   [removable]="true" (removed)="removeNature(nature)">
+          {{nature.description}}
+          <i matChipRemove class="im im-icon-Arrow-XLeft"></i>
+        </mat-chip>
+      </mat-chip-list>
+    </p>
+
+    <p class="form-row form-row-wide">
+      <app-checkbox [label]="'community.form.shared_room'" formControlName="sharedRoom"></app-checkbox>
+
+    </p>
+
+    <p>
+      <label> {{'community.form.max_roommates' | translate}}
+        <input type="text" class="input-text"
+               formControlName="maxNumberOfRoomMates"
+               [placeholder]="'global.form.price_range_min' | translate"  />
+        </label>
+    </p>
+  </form>
+</div>

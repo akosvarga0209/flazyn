@@ -1,0 +1,53 @@
+<form class="register" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.fullName.errors && f.fullName.touched}">
+    <label for="fullName" [translate]="'auth.registration_form.full_name_title'">Full name
+      <i class="im im-icon-Male"></i>
+      <input formControlName="fullName" type="text" class="input-text" name="fullName" id="fullName" value="" />
+    </label>
+    <small *ngIf="f.fullName.errors && f.fullName.touched" id="passwordFeedback" class="form-text text-muted"
+    [translate]="'auth.registration_form.full_name_feedback'">
+      Please enter your full name.
+    </small>
+  </p>
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.email.errors && f.email.touched}">
+    <label for="email" [translate]="'auth.registration_form.email_address_title'">Email Address
+      <i class="im im-icon-Mail"></i>
+      <input formControlName="email" type="text" class="input-text" name="email" id="email" value="" />
+    </label>
+    <small *ngIf="f.email.errors && f.email.touched" id="passwordFeedback" class="form-text text-muted" 
+    [translate]="'auth.registration_form.email_address_feedback'">
+      Please enter your valid email address.
+    </small>
+  </p>
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.password.errors && f.password.touched}">
+    <label for="password" [translate]="'auth.registration_form.password_title'">Password
+      <i class="im im-icon-Lock-2"></i>
+      <input formControlName="password" class="input-text" type="password" name="password" id="password" #password/>
+    </label>
+    <small *ngIf="f.password.errors && f.password.touched" id="passwordFeedback" class="form-text text-muted" 
+    [translate]="'auth.registration_form.password_feedback'">
+      Please enter a password longer than 5 characters, containing numbers, uppercase and lowercase letters.
+    </small>
+  </p>
+
+  <p class="form-row form-row-wide" [ngClass]="{'has-danger':password.value !== retypePassword.value && f.retypePassword.touched && !f.password.invalid}">
+    <label for="retypePassword" [translate]="'auth.registration_form.retype_password_title'">Repeat Password
+      <i class="im im-icon-Lock-2"></i>
+      <input formControlName="retypePassword" class="input-text" type="password" name="retypePassword" id="retypePassword" #retypePassword/>
+    </label>
+    <small *ngIf="password.value !== retypePassword.value && f.retypePassword.touched && !f.password.invalid" id="passwordFeedback"
+      class="form-text text-muted"
+      [translate]="'auth.registration_form.retype_password_feedback'">
+      The two passwords are not matching.
+    </small>
+  </p>
+
+  <input type="submit" class="button border fw margin-top-10" name="register" [value]="registerTitle" />
+  <div class="alert alert-warning" role="alert" *ngIf="openAlert" [translate]="'auth.registration_form.email_already_exists'">
+    User already registred with the given email address! You can sign in
+    <a class="alert-link" (click)="navigateToLogin()" [translate]="'auth.click_here'">here</a>
+  </div>
+</form>

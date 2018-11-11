@@ -1,0 +1,14 @@
+<div class="add-listing-section margin-top-45">
+  <div class="add-listing-headline">
+
+    <h3>
+      <i class="im im-icon-Green-House"></i>
+      {{'flat.form.title' | translate}}
+    </h3>
+  </div>
+  <form method="post"  [formGroup]="form">
+    <p class="form-row form-row-wide">
+      <app-checkbox  [label]="'flat.form.furnished'" formControlName="furnished"></app-checkbox>
+    </p>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="profile-page">
+  <div class="container">
+    <form [formGroup]="profile">
+      <div class="form">
+        <div class="add-listing-section margin-top-45">
+          <div class="add-listing-headline">
+            <h3>
+              <i class="sl sl-icon-doc"></i>
+              {{'profile.form.title' | translate}}
+            </h3>
+          </div>
+          <div style="width: 400px; height: 400px">
+            <img *ngIf="imagePreview" [src]="imagePreview" width="400" height="400">
+          </div>
+          <app-file-upload (getFiles)="onUpload($event)"
+                           [btnCaption]="'profile.form.upload'"
+                            formControlName="profilePhoto">
+
+          </app-file-upload>
+        </div>
+
+
+      </div>
+      <app-global-form formControlName="global" [mainFormSubmitted]="submit"></app-global-form>
+      <app-community-form formControlName="community"  [mainFormSubmitted]="submit"></app-community-form>
+      <app-flat-form formControlName="flat"  [mainFormSubmitted]="submit"></app-flat-form>
+    </form>
+    <button type="button" (click)="doSubmit()" class="button" >
+      {{'save' | translate}}
+    </button>
+  </div>
+</div>

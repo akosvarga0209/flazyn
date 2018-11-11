@@ -1,0 +1,83 @@
+{
+  "save": "Save",
+  "login.title": "Sign-in",
+  "searchbar": {
+    "title": "Find a place worth to live",
+    "subtitle": "Find yourself asd",
+    "community": "Find a community",
+    "roommate": "Find a roommate",
+    "flat": "Find a flat"
+
+  },
+  "form": {
+    "required_field": "This field is required!"
+  },
+  "location": "Location",
+  "auth": {
+    "sign_in_title": "Sign In",
+    "register_title": "Register",
+    "click_here": "here",
+    "registration_form": {
+      "full_name_title": "Full Name",
+      "full_name_feedback": "Please enter your full name.",
+      "email_address_title": "Email Address",
+      "email_address_feedback": "Please enter your valid email address.",
+      "password_title": "Password",
+      "password_feedback": "Please enter a password longer than 5 characters, containing numbers, uppercase and lowercase letters.",
+      "retype_password_title": "Repeat Password",
+      "retype_password_feedback": "The two passwords are not matching.",
+      "email_already_exists": "User already registred with the given email address! You can sign in ",
+      "thank_you_for_registering": "Thank you for registering! We now sent you an email with an activation link. Please verify your email address by clicking the link in your inbox."
+    },
+    "sign_in_form": {
+      "password_feedback": "Please enter your password.",
+      "forgot_password": "Forgot Your Password?",
+      "login": "Login",
+      "email_not_activated": "Your email address has not been activated yet. You must do so before logging in. You can request a new activation email by clicking ",
+      "remember_me": "Remember Me",
+      "activation_link_resent": "We sent another activation link to your inbox.",
+      "bad_creditentials": "The given email and password combination is wrong.",
+      "blocked": "You have been blocked for trying too many times. Try again later, or use the Remember Me function."
+    }
+  },
+  "activation": {
+    "success.title": "Success!",
+    "success.message": "Registration was successful!",
+    "send_email": "Send E-mail"
+  },
+  "profile.form": {
+    "upload": "Upload photo",
+    "title": "Your profile",
+    "success.message": "Your profile has been saved!"
+  },
+  "global.form": {
+    "title": "Basic information",
+    "roommate_appear": "Appear in Roommate search",
+    "price_range": "Price range",
+    "price_range_min": "Min",
+    "price_range_max": "Max",
+    "pet": "Pet",
+    "smoke": "Smoke",
+    "man": "Man",
+    "woman": "Woman",
+    "gender": "Gender",
+    "age": "Age"
+  },
+  "community.form": {
+   "title": "Community details",
+    "personality": "About yourself",
+    "shared_room": "Shared room",
+    "max_roommates": "Max number of roommates"
+  },
+  "flat.form": {
+    "title": "Flat details",
+    "furnished": "Furnished"
+  },
+  "advertisement": {
+    "flat.form": {
+      "title": "Basic information",
+      "smoke": "Smoke",
+      "pet": "Pet"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+
+<!-- Content
+================================================== -->
+
+<!-- Container -->
+<div class="container">
+  <mat-progress-spinner class="loading" *ngIf="activationProgress === ActivationProgress.IN_PROGRESS" mode="indeterminate"></mat-progress-spinner>
+  <div *ngIf="activationProgress === ActivationProgress.FAILED" class="row">
+    <div  class="col-md-12">
+
+      <div class="booking-confirmation-page">
+        <i class="fa fa-times-circle"></i>
+        <h2 class="margin-top-30">{{errorMessage}}</h2>
+        <a href="dashboard-invoice.html" class="button margin-top-30" [translate]="'activation.send_email'"></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Container / End -->
+
+
+
+<!-- Footer
+================================================== -->
+<div id="footer" class="margin-top-65" *ngIf="activationProgress === ActivationProgress.FAILED">
+  <!-- Main -->
+  <div class="container">
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="copyrights">© 2017 Listeo. All Rights Reserved.</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

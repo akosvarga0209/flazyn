@@ -1,0 +1,70 @@
+
+  <div class="add-listing-section margin-top-45">
+    <div class="add-listing-headline">
+
+      <h3>
+        <i class="sl sl-icon-doc"></i>
+        {{'global.form.title' | translate}}
+      </h3>
+    </div>
+    <form method="post"  [formGroup]="form">
+
+      <p class="form-row form-row-wide">
+        <app-checkbox [label]="'global.form.roommate_appear'"
+                      formControlName="roomMateSearch">
+        </app-checkbox>
+
+      </p>
+
+      <p class="form-row form-row-wide" [ngClass]="{'has-danger':f.age.errors}">
+        <label class="required">
+          {{'global.form.age' | translate}}
+          <input type="text" class="input-text" formControlName="age"/>
+        </label>
+        <div *ngIf="f.age.errors">
+          <small *ngIf="f.age.errors.numberedText" class="form-text text-muted">
+            {{'form.required_field' | translate}}
+          </small>
+        </div>
+
+
+      <p>
+        <label class="required">{{'global.form.gender' | translate}}
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button
+                              [value]="Gender.MALE"> {{ 'global.form.man' | translate}}</mat-radio-button>
+            <mat-radio-button
+              [value]="Gender.FEMALE"> {{ 'global.form.woman' | translate}}</mat-radio-button>
+          </mat-radio-group>
+
+        </label>
+      </p>
+
+      <p class="form-row form-row-wide">
+        <app-checkbox  [label]="'global.form.pet'" formControlName="pet"></app-checkbox>
+
+        <app-checkbox  [label]="'global.form.smoke'" formControlName="smoke"></app-checkbox>
+      </p>
+
+      <p>
+        <label> {{'global.form.price_range' | translate}}
+          <input type="text" class="input-text"
+                 [placeholder]="'global.form.price_range_min' | translate"
+                  formControlName="priceMin"/>
+          <input type="text" class="input-text"
+                 [placeholder]="'global.form.price_range_max' | translate"
+                 formControlName="priceMax"/>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          {{'location' | translate}}
+          <input placeholder="" #autocomplete type="text" formControlName="location">
+        </label>
+      </p>
+
+    </form>
+
+  </div>
+
