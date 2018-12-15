@@ -19,7 +19,6 @@ public class AuthenticationFailureListener
     private HttpServletRequest request;
 
     public void onApplicationEvent(AuthenticationFailureBadCredentialsEvent e) {
-        //System.out.println(e.getAuthentication().getDetails());
         loginAttemptService.loginFailed(getClientIP());
     }
 
